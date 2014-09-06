@@ -1,0 +1,8 @@
+<%= @cheese["name"] %>
+
+<a href="/cheeses/<%= @cheese["id"] %>/edit">Edit Cheese</a>
+<form action="/cheeses/<%= @cheese["id"] %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Cheese">
+</form>
+

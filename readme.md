@@ -1,1 +1,7 @@
-# blog_app
+# simple_curding_app
+
+From Carrie
+
+An explanation on CRUDing with Redis and setting Indexes!
+
+hey guys, I took another stab at the cheese assignment tonight. With phil's help, I learned something about how my approach was wrong and how to rectify it. Here is a little write up, hope this helps some of you too. Here is what I was doing at first - when I was doing creating the forms for the delete/update buttons, I was doing something like <% @cheeses.each_with_index do |cheese, index| %>...etc, in order to for example delete something at a specific index. But as I was testing my code, I saw that there was an issue with that approach, because at some point some cheeses just could not be deleted. The problem was actually due to a mismatch between the index values. In other words, when I clicked "remove cheese:3", it was actually deleting something else like "cheese:5". In our original seeds.rb, we iterated through the cheese data, for each cheese hash, assigned key "cheeses:#{index}", so that each cheese hash has a key, something like "cheeses:2", "cheeses:5", etc. But redis being a big hash and when we do redis.get to retrieve info from the database, the order that the data come out in is likely to be different than the order they went in. How this problem was resolved: as phil showed me, we can add a counter key in our seeds.rb that starts at 0, and then we increment counter in each iteration and assign that value to be the index, and then add in a key value id to store the index value. Our "cheese:1" id would be 1, "cheese:2" id would be 2, etc. Thus resolving the mismatch issue I was experiencing. Hope this is somewhat helpful for you.

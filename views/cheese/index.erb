@@ -1,0 +1,23 @@
+<ul>
+<% @cheeses.each do |cheese| %>
+  <li>
+    <h1><a href="/cheeses/<%= cheese["id"] %>">
+      <%= cheese["name"] %></a></h1>
+      <br />
+
+
+     <p><%= cheese["country"] %></p>
+    </p>
+   <p><%= cheese["milk_type"] %></p>
+   </p>
+   <p><%= cheese["stank_level"] %> is the stank level GET RID</p>
+   </p>
+   <p><%= cheese["desc"] %></p>
+   </p>
+
+      <p><a href="/cheeses/<%= cheese["id"] %>"><img src="<%= cheese["image_url"] %>" width="400px"/></a></p>
+  </li>
+<% end %>
+</ul>
+
+<footer><a href="/cheeses/new">Add a cheese</a></footer>

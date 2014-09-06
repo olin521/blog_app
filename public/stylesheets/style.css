@@ -1,0 +1,10 @@
+body{
+  font-family: arial;
+  background-color: yellow;
+}
+footer {
+  height: 25px;
+  color: white;
+  background-color: black;
+  text-align: center;
+}

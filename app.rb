@@ -9,11 +9,21 @@ class App < Sinatra::Base
   # Configuration
   ########################
   enable :method_override
-
+  enable :logging
   ########################
   # DB Configuration
   ########################
   $redis = Redis.new(:url => ENV["REDISTOGO_URL"])
+
+
+  before do
+    logger.info "Request Headers: #{headers}"
+    logger.warn "Params: #{params}"
+  end
+
+  after do
+    logger.info "Response Headers: #{response.headers}"
+  end
 
   ########################
   # Routes
@@ -33,8 +43,13 @@ class App < Sinatra::Base
   # POST /cheeses
   post("/cheeses") do
     name = params[:name]
+    country = params[:country]
+    milk_type = params[:milk_type]
+    stank_level = params[:stank_level]
+    desc = params[:desc]
+    image_url = params[:image_url]
     index = $redis.incr("cheese:index")
-    cheese = { name: name, id: index }
+    cheese = { name: name, id: index, country: country, milk_type: milk_type, stank_level: stank_level, desc: desc, image_url: image_url }
     $redis.set("cheeses:#{index}", cheese.to_json)
     redirect to("/cheeses")
   end
@@ -64,7 +79,12 @@ class App < Sinatra::Base
   put("/cheeses/:id") do
     name = params[:name]
     id = params[:id]
-    updated_cheese = { name: name, id: id }
+    country = params[:country]
+    milk_type = params[:milk_type]
+    stank_level = params[:stank_level]
+    desc = params[:desc]
+    image_url = params[:image_url]
+    updated_cheese = { name: name, id: id, country: country, milk_type: milk_type, stank_level: stank_level, desc: desc, image_url: image_url }
     $redis.set("cheeses:#{id}", updated_cheese.to_json)
     redirect to("/cheeses/#{id}")
   end

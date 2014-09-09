@@ -1,0 +1,24 @@
+<div id="list">
+<ul class="show_all">
+<% @colas.each do |cola| %>
+  <li>
+    <h1><a href="/colas/<%= cola["id"] %>">
+      <%= cola["name"] %></a></h1>
+      <br />
+
+   <p><%= cola["sugar_type"] %></p>
+   </p>
+   <p><%= cola["country"] %></p>
+    </p>
+   <p><%= cola["taste_level"] %> </p>
+   </p>
+   <p><%= cola["desc"] %></p>
+   </p>
+
+      <p><a href="/colas/<%= cola["id"] %>"><img src="<%= cola["image_url"] %>" width ="auto" height="400px"/></a></p>
+  </li>
+<% end %>
+</ul>
+</div>
+
+<footer><a href="/colas/new">Add A Cola</a></footer>

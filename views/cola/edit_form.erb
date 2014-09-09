@@ -1,0 +1,30 @@
+<form action="/colas/<%= @cola["id"] %>" method="POST">
+
+  <label for="new_cola_name">Name</label>
+  <input type="text" name="name" value="<%= @cola["name"] %>" id="new_cola_name">
+  <br />
+
+  <label for="new_cola_country">Country</label>
+  <input type="text" name="country" value="<%= @cola["country"] %>" id="new_cola_country">
+<br />
+
+  <label for="new_cola_milk_type">Sugar Type</label>
+  <input type="text" name="sugar_type" value="<%= @cola["milk_type"] %>" id="new_cola_milk_type">
+
+<br />
+
+  <label for="new_cola_stank_level">Taste Level</label>
+  <input type="text" name="taste_level" value="<%= @cola["stank_level"] %>" id="new_cola_stank_level">
+
+  <br />
+
+  <label for="new_cola_desc">Describe</label>
+  <input type="text" name="desc" value="<%= @cola["desc"] %>" id="new_cheese_desc">
+  <br />
+   <label for="new_cheese_image_url">Image Url</label>
+  <input type="text" name="image_url" value="<%= @cola["image_url"] %>" id="new_cola_image_url">
+  <br />
+
+  <input type="hidden" name="_method" value="PUT">
+  <input type="submit" value="Update Cola" class="button">
+</form>

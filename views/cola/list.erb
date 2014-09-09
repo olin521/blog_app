@@ -1,0 +1,24 @@
+<div id="list">
+<ul>
+<% @colas.each do |cola| %>
+  <li>
+    <h1><a href="/colas/<%= cola["id"] %>">
+      <%= cola["name"] %></a></h1>
+
+
+
+
+
+      <p><a href="/colas/<%= cola["id"] %>"><img src="<%= cola["image_url"] %>" width ="auto" height="400px"/></a></p>
+  </li>
+<% end %>
+</ul>
+
+
+<!--<p class="add"><a href="/colas/new">Add A Cola</a></p>-->
+
+<FORM METHOD="LINK" ACTION="/colas/new">
+<INPUT TYPE="submit" VALUE="Add A Cola" class="button">
+</FORM>
+</div>
+

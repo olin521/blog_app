@@ -1,11 +1,65 @@
-body{
+body {
   font-family: arial;
   background-color: #121212;
   color:#efefef;
 }
+#cola_page h2, li, a{
+  font-family: arial;
+  background-color: #121212;
+  color:#efefef;
+  list-style-type: none;
+}
+a.btn {
+  display: block;
+  padding: 10px;
+  background-color: red;
+}
 a{
   color:green;
   text-decoration: none;
+}
+
+#list{
+    margin:0 auto;
+    text-align: center;
+    width: 400px;
+}
+#list li{
+display: inline;
+}
+ul li{
+    list-style-type: none;
+    display: inline;;
+}
+h1{
+  font-size: 35px;
+}
+nav li{
+  display: inline;
+  margin:0 auto;
+  text-decoration: none;
+}
+#side_btn{
+  float: right;
+  text-align: right;
+  margin-right: 15px;
+}
+.button{
+  color:black;
+  display: inline;
+  border: white 1px solid;
+}
+.add, .add a{
+  height: 25px;
+  background-color: black;
+  color:white;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+#item {
+  padding-left: 15px;
+
 }
 
 footer {
@@ -16,19 +70,4 @@ footer {
   font-weight: bold;
   font-size: 22px;
 }
-#list{
-    margin:0 auto;
-    text-align: center;
-    width: 400px;
-}
-li{
-    list-style-type: none;
-}
-h1{
-  font-size: 35px;
-}
-nav li{
-  display: inline;
-  margin:0 auto;
-  text-decoration: none;
-}
+

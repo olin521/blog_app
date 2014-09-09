@@ -29,71 +29,88 @@ class App < Sinatra::Base
   # Routes
   ########################
   get('/') do
-    redirect to("/cheeses")
+
+
+    render(:erb, :"cola/index")
+  end
+  get('/about') do
+
+
+    render(:erb, :"cola/index")
   end
 
   # THE SEVEN DEADLY ROUTES
 
   # GET /cheeses
-  get("/cheeses") do
-    @cheeses = $redis.keys("*cheeses*").map { |cheese| JSON.parse($redis.get(cheese)) }
-    render(:erb, :"cheese/index")
+  get("/colas") do
+    @colas = $redis.keys("*colas*").map { |cola| JSON.parse($redis.get(cola)) }
+    render(:erb, :"cola/list")
   end
 
   # POST /cheeses
-  post("/cheeses") do
+  post("/colas") do
     name = params[:name]
     country = params[:country]
-    milk_type = params[:milk_type]
-    stank_level = params[:stank_level]
+    sugar_type = params[:sugar_type]
+    taste_level = params[:taste_level]
     desc = params[:desc]
     image_url = params[:image_url]
-    index = $redis.incr("cheese:index")
-    cheese = { name: name, id: index, country: country, milk_type: milk_type, stank_level: stank_level, desc: desc, image_url: image_url }
-    $redis.set("cheeses:#{index}", cheese.to_json)
-    redirect to("/cheeses")
+    index = $redis.incr("cola:index")
+    cola = { name: name, id: index, country: country, sugar_type: sugar_type, taste_level: taste_level, desc: desc, image_url: image_url }
+    $redis.set("colas:#{index}", cola.to_json)
+    redirect to("/colas")
   end
 
   # GET /cheeses/new
-  get("/cheeses/new") do
-    render(:erb, :"cheese/new_form")
+  get("/colas/new") do
+    render(:erb, :"cola/new_form")
   end
 
   # GET /cheeses/1
-  get("/cheeses/:id") do
+  get("/colas/:id") do
     id = params[:id]
-    raw_cheese = $redis.get("cheeses:#{id}")
-    @cheese = JSON.parse(raw_cheese)
-    render(:erb, :"cheese/show")
+    raw_cola = $redis.get("colas:#{id}")
+    @cola = JSON.parse(raw_cola)
+    render(:erb, :"cola/show")
+  end
+
+  #### POST /cheeses/1/comment
+  post("/colas/:id/#comments") do
+    user_name = params[:user_name]
+    comment = params[:comment]
+    index = $redis.incr("comment:index")
+    comment = { user_name: user_name, id: index, comment: comment }
+    $redis.set("comments:#{index}", comment.to_json)
+    redirect to("/colas/:id")
   end
 
   # GET /cheeses/1/edit
-  get("/cheeses/:id/edit") do
+  get("/colas/:id/edit") do
     id = params[:id]
-    raw_cheese = $redis.get("cheeses:#{id}")
-    @cheese = JSON.parse(raw_cheese)
-    render(:erb, :"cheese/edit_form")
+    raw_cola = $redis.get("colas:#{id}")
+    @cola = JSON.parse(raw_cola)
+    render(:erb, :"cola/edit_form")
   end
 
   # PUT /cheeses/1
-  put("/cheeses/:id") do
+  put("/colas/:id") do
     name = params[:name]
     id = params[:id]
     country = params[:country]
-    milk_type = params[:milk_type]
-    stank_level = params[:stank_level]
+    sugar_type = params[:sugar_type]
+    taste_level = params[:taste_level]
     desc = params[:desc]
     image_url = params[:image_url]
-    updated_cheese = { name: name, id: id, country: country, milk_type: milk_type, stank_level: stank_level, desc: desc, image_url: image_url }
-    $redis.set("cheeses:#{id}", updated_cheese.to_json)
-    redirect to("/cheeses/#{id}")
+    updated_cola = { name: name, id: id, country: country, sugar_type: sugar_type, taste_level: taste_level, desc: desc, image_url: image_url }
+    $redis.set("colas:#{id}", updated_cola.to_json)
+    redirect to("/colas/#{id}")
   end
 
   # DELETE /cheeses/1
-  delete("/cheeses/:id") do
+  delete("/colas/:id") do
     id = params[:id]
-    $redis.del("cheeses:#{id}")
-    redirect to("/cheeses")
+    $redis.del("colas:#{id}")
+    redirect to("/colas")
   end
 
 end

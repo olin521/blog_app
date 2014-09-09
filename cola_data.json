@@ -1,0 +1,94 @@
+{
+    "cola_data": [
+        {
+            "name": "Coca-Cola",
+            "country": "US",
+            "sugar_type": "High fructose corn syrup",
+            "taste_level": 3,
+            "image_url": "http://www.cgforge.org/tutorials/poly-modeling-a-coke-bottle/01.png",
+            "desc": "Colonel John Pemberton was wounded in the Civil War, became addicted to morphine, and began a quest to find a substitute for the dangerous opiate. The prototype Coca-Cola recipe was formulated at Pemberton's Eagle Drug and Chemical House, a drugstore in Columbus, Georgia, originally as a coca wine. He may have been inspired by the formidable success of Vin Mariani, a European coca wine."
+        },
+        {
+            "name": "Fentimen's Curiosity Cola",
+             "country": "UK",
+            "sugar_type": "Cane sugar",
+            "taste_level": 5,
+            "image_url": "http://res0.graysonline.com/handlers/imagehandler.ashx?t=sh&id=3157396&s=gl&index=0&ts=635054873313270000",
+            "desc": "This curiously invigorating recreation of colas from yesteryear is made using infusions of the finest herbal ingredients."
+        },
+        {
+           "name": "Fritz Cola",
+             "country": "GR",
+            "sugar_type": "Cane sugar",
+            "taste_level": "NA",
+            "image_url": "http://www.berliner-getraenkeservice.de/images/product_images/popup_images/1600_0.jpg",
+            "desc": "Fritz Kola is a German cola drink that is also available in the UK, Spain, Germany, and other parts of Europe. The carbonated drink has a cola flavor with a hint of lemon."
+        },
+       {
+           "name": "Pepsi Cola",
+             "country": "US",
+            "sugar_type": "High fructose corn syrup",
+            "taste_level": 3,
+            "image_url": "http://images.ticiz.com/843954_w640_h640_pepsicola25lt.jpg",
+            "desc": "Pepsi was first introduced as 'Brad's Drink'in New Bern, North Carolina, United States, in 1893 by Caleb Bradham, who made it at his drugstore where the drink was sold. It was later labeled Pepsi Cola, named after the digestive enzyme pepsin and kola nuts used in the recipe. "
+        },
+         {
+           "name": "RC Cola",
+             "country": "US",
+            "sugar_type": "High fructose corn syrup",
+            "taste_level": 2,
+            "image_url": "http://www.rccolainternational.com/images/uploads/main/20/rc-neo-bottle-2.png",
+            "desc": "It's been over years since Claude Hatcher, a young graduate pharmacist in Columbus, Georgia, began creating soft drinks in the basement of his family's wholesale grocery business in 1905. Little did he know at the time - that his humble experiments would grow into a great soft drink company that's still driven today by the same innovative, entrepreneurial spirit."
+        },
+        {
+           "name": "Barr Cola",
+             "country": "UK",
+            "sugar_type": "Sugar",
+            "taste_level": 3,
+            "image_url": "http://static.giantbomb.com/uploads/original/6/66473/1545512-barr_cola_750ml_fs.jpg",
+            "desc": "Popular in UK in fish and chips stores."
+        },
+         {
+           "name": "Johnny Ryan Cola",
+             "country": "US",
+            "sugar_type": "Sugar",
+            "taste_level": 4,
+            "image_url": "http://ecx.images-amazon.com/images/I/41EoMJ-GnNL.jpg",
+            "desc": "Johnnie Ryan soda pop comes in a glass bottles, and is made of only the finest ingredients including being sweetened by 100% pure cane sugar. Whether you have fond memories of drinking Johnnie Ryan or this is your first time trying it, it's easier than ever to get your hands on a bottle of some of the finest soda pop in the country."
+        },
+        {
+           "name": "Boylan Cola",
+             "country": "US",
+            "sugar_type": "Sugar",
+            "taste_level": 4,
+            "image_url": "http://www.boylanbottling.com/wp-content/uploads/2012/10/cane-cola-large1.jpg",
+            "desc": "Made with only the finest ingredients and pure cane sugar, Boylan Sugar CaneCola is a true super-premium beverage. This beverage can be characterized as a turn-of-the-century cola; less acidic, less sweet and made with a blend of classic notes."
+        },
+         {
+           "name": "Jack Daniels Cola",
+            "country": "US",
+            "sugar_type": "cane and alcohol",
+            "taste_level": 1,
+            "image_url": "http://www.jdcollectorspage.com/images/cola4.JPG",
+            "desc": "Chemically induced mixed drink of cola and Jack Daniels. Taste experts give it a failing grade."
+        },
+        {
+           "name": "Jones Soda Cola",
+            "country": "US",
+            "sugar_type": "sugar",
+            "taste_level": 4,
+            "image_url": "http://assets.coolhunting.com/coolhunting/mt_asset_cache/assets_c/2011/07/JonesCola-5-thumb-900x1200-29836.jpg",
+            "desc": "The one, the only, Jones Pure Cane Cola. New formula, new taste, change your cola today Low Sodium."
+        }
+    ],
+    "country_codes": {
+        "GB": "Great Britain",
+        "US": "United States",
+        "GR": "Germany"
+    },
+    "taste_levels:1": "No",
+    "taste_levels:2": "Meh",
+    "taste_levels:3": "It's Coke",
+    "taste_levels:4": "Pretty Coked Up",
+    "taste_levels:5": "Coked Up"
+}

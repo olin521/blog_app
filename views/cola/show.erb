@@ -1,0 +1,24 @@
+  <div id="side_btn">
+  <form action="/colas/<%= @cola["id"] %>/edit" method="LINK" >
+  <input type="submit" value="Edit this Cola Entry" class="button">
+  </form>
+
+  <form action="/colas/<%= @cola["id"] %>" method="POST"class="button">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Cola">
+  </form>
+  </div>
+
+<h2><%= @cola["name"] %></h2>
+<div id="item">
+
+
+<li><img src="<%= @cola["image_url"] %>" width="auto" height="400px"/></li>
+
+<li>Country: <%= @cola["country"] %></li>
+<li>Sugar Type: <%= @cola["sugar_type"] %></li>
+<li>Taste Level: <%= @cola["taste_level"] %></li>
+<li>Brief: <%= @cola["desc"] %></li>
+
+</div>
+

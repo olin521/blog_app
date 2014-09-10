@@ -39,7 +39,7 @@ class App < Sinatra::Base
   #######################
   CLIENT_ID     = ENV["GITHUB_CLIENT_ID"]
   CLIENT_SECRET = ENV["GITHUB_CLIENT_SECRET"]
-  CALLBACK_URL  = "http://127.0.0.1:9292/oauth_callback"
+  CALLBACK_URL  = "http://www.heroku.com/oauth_callback"
   #######################
 
   ########################

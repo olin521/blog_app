@@ -2,10 +2,11 @@ body {
   font-family: arial;
   background-color: #121212;
   color:#efefef;
+  background: #202020 url("http://www.bitrebels.com/wp-content/uploads/2011/10/Daft-Punk-Coke-Bottles-3.jpg") no-repeat top center fixed;
+    background-size: cover;
 }
 #cola_page h2, li, a{
   font-family: arial;
-  background-color: #121212;
   color:#efefef;
   list-style-type: none;
 }
@@ -15,21 +16,29 @@ a.btn {
   background-color: red;
 }
 a{
-  color:green;
+  color:red;
   text-decoration: none;
 }
 
-#list{
-    margin:0 auto;
+.list{
+  margin:0 auto;
     text-align: center;
     width: 400px;
+    background-color: rgba(10,11,12,0.4);
+}
+input, input.button{
+  background-color:black;
+  color:white;
 }
 #list li{
 display: inline;
 }
-ul li{
+ul{
+  padding:none;
+}
+li{
     list-style-type: none;
-    display: inline;;
+    display: inline;
 }
 h1{
   font-size: 35px;
@@ -59,9 +68,12 @@ nav li{
 }
 #item {
   padding-left: 15px;
+  width: 75%;
 
 }
-
+header{
+  padding-left:15px;
+}
 footer {
   height: 35px;
   color: white;
@@ -70,4 +82,7 @@ footer {
   font-weight: bold;
   font-size: 22px;
 }
-
+#about{
+  width:75%;
+  padding-left: 15px;
+}

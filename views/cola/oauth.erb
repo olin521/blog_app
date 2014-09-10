@@ -1,0 +1,13 @@
+<div id="welcome">
+
+<% if session[:access_token] %>
+  <a href="/logout">Logout</a>
+   <a href="/list">Go to List page</a>
+<% else %>
+  <a href="<%= @url %>">Login with Github</a>
+  <h3>You're not yet autheticated, pelase sign in with github.</h3>
+<% end %>
+
+</div>
+
+

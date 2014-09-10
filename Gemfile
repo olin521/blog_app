@@ -10,6 +10,7 @@ gem 'redis',   '3.1.0'
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
+  gem 'httparty'
 end
 
 group :production do

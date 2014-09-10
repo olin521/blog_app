@@ -7,27 +7,27 @@ $redis = Redis.new(url: ENV["REDISTOGO_URL"])
 $redis.flushdb
 
 # Create a counter to track indexes
-$redis.set("cheese:index", 0)
+$redis.set("cola:index", 0)
 
 puts "Importing data..."
 
-cheese_data = JSON.parse(File.read("cheese_data.json"))
+cola_data = JSON.parse(File.read("cola_data.json"))
 
 # Set cheeses
-cheese_data["cheese_data"].each do |cheese|
+cola_data["cola_data"].each do |cola|
   # Setting an index by incrementing a counter rather than using keys.size
-  index = $redis.incr("cheese:index")
-  cheese[:id] = index
+  index = $redis.incr("cola:index")
+  cola[:id] = index
   # keys.count and each_with_index won't work properly because there's no guarantee of order with a hash
-  $redis.set("cheeses:#{index}", cheese.to_json)
+  $redis.set("colas:#{index}", cola.to_json)
 end
 
 # Set stank levels
-cheese_data.select { |key, value| key.include? "stank" }.each do |level, adjective|
+cola_data.select { |key, value| key.include? "taste" }.each do |level, adjective|
   $redis.set(level, adjective)
 end
 
 # Set country codes
-$redis.set("country_codes", cheese_data["country_codes"].to_json)
+$redis.set("country_codes", cola_data["country_codes"].to_json)
 
 puts "Imported #{$redis.keys.count} records"

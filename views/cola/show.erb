@@ -1,7 +1,10 @@
   <div id="side_btn">
+
   <form action="/colas/<%= @cola["id"] %>/edit" method="LINK" >
   <input type="submit" value="Edit this Cola Entry" class="button">
   </form>
+
+
 
   <form action="/colas/<%= @cola["id"] %>" method="POST"class="button">
   <input type="hidden" name="_method" value="DELETE">
@@ -9,16 +12,57 @@
   </form>
   </div>
 
-<h2><%= @cola["name"] %></h2>
+
+
 <div id="item">
+  <h2><%= @cola["name"] %></h2>
+  <li><img src="<%= @cola["image_url"] %>" width="auto" height="400px"/></li>
+<br />
+  <li>Country: <%= @cola["country"] %></li>
+  <br />
+  <li>Taste Level: <%= @cola["taste_level"] %></li>
+  <br />
+  <li>Sugar Type: <%= @cola["sugar_type"] %></li>
+  <br />
+  <li>Brief: <%= @cola["desc"] %></li>
+  <br /><br />
+  <li><h3>Comments:</h3></li>
+<% @cola["comments"].each do |comment| %>
+<li>New Comment:</li>
+  <li><%= comment["user_name"] + ":  " + comment["user_comment"] %></li>
+  <br />
+<% end %>
 
 
-<li><img src="<%= @cola["image_url"] %>" width="auto" height="400px"/></li>
 
-<li>Country: <%= @cola["country"] %></li>
-<li>Sugar Type: <%= @cola["sugar_type"] %></li>
-<li>Taste Level: <%= @cola["taste_level"] %></li>
-<li>Brief: <%= @cola["desc"] %></li>
+<div>
+  <h3>Add a new Comment:</h3>
+<form action="/colas/<%= @cola["id"] %>/comments" method="POST" id="form">
+
+  <label for="user_name">User Name</label>
+  <input type="text" name="user_name" placeholder="User Name" id="user_name">
+  <br />
+
+  <label for="user_comment">Comments</label>
+  <input type="text" name="user_comment" placeholder="user_comment" id="user_comment">
+  <br />
+ <br />
+
+  <input type="submit" value="Create Comment" class="button">
+</form>
+</div>
+
+
+
+
+
+
+
+
+
 
 </div>
+
+
+
 

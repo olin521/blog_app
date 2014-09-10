@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'redis'
 require 'json'
-require 'pry'
+#require 'pry'
 # OAuth
 require 'httparty'
 require 'securerandom'
@@ -113,11 +113,10 @@ get('/oauth_callback') do
     redirect to("/colas")
   end
 
-  # POST /cheeses/1/comments ############
+  # POST /cheeses/1/comments ##
   post("/colas/:id/comments") do
     id = params[:id]
     @cola = JSON.parse($redis.get("colas:#{id}"))
-    #binding.pry
     comment = {user_name: params["user_name"],
     user_comment: params["user_comment"]}
     @cola["comments"].push(comment)
@@ -135,7 +134,6 @@ get('/oauth_callback') do
     id = params[:id]
     raw_cola = $redis.get("colas:#{id}")
     @cola = JSON.parse(raw_cola)
-    #binding.pry
     render(:erb, :"cola/show")
   end
 

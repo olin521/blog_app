@@ -16,16 +16,20 @@
 
 <div id="item">
   <h2><%= @cola["name"] %></h2>
-  <li><img src="<%= @cola["image_url"] %>" width="auto" height="400px"/></li>
-<br />
-  <li>Country: <%= @cola["country"] %></li>
-  <br />
-  <li>Taste Level: <%= @cola["taste_level"] %></li>
-  <br />
-  <li>Sugar Type: <%= @cola["sugar_type"] %></li>
-  <br />
-  <li>Brief: <%= @cola["desc"] %></li>
+<table>
+  <tr><td rowspan="4" style="padding-right:10px"><img src="<%= @cola["image_url"] %>" width="auto" height="400px"/></td>
+  </tr>
+    <tr><td>Country: <%= @cola["country"] %></td></tr>
+    <tr><td>Taste Level: <%= @cola["taste_level"] %></td></tr>
+    <tr><td>Sugar Type: <%= @cola["sugar_type"] %></td></tr>
+
+  <tr><td colspan="2">Brief: <%= @cola["desc"] %></td>
+  </tr>
+</table>
+
+
   <br /><br />
+
   <li><h3>Comments:</h3></li>
 <% @cola["comments"].each do |comment| %>
 <li>New Comment:</li>
@@ -48,7 +52,7 @@
   <br />
  <br />
 
-  <input type="submit" value="Create Comment" class="button">
+  <input type="submit" value="Submit Comment" class="button">
 </form>
 </div>
 

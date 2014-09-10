@@ -69,10 +69,12 @@ nav li{
 #item {
   padding-left: 15px;
   width: 75%;
+  background-color: rgba(10,11,12,0.8);
 
 }
 header{
   padding-left:15px;
+  background-color: rgba(10,11,12,0.5);
 }
 footer {
   height: 35px;

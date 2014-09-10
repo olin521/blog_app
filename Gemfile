@@ -9,8 +9,9 @@ gem 'redis',   '3.1.0'
 # only used in development locally
 group :development, :test do
   gem 'pry'
-  gem 'shotgun'
+  #gem 'shotgun'
   gem 'httparty'
+  gem 'rackup'
 end
 
 group :production do

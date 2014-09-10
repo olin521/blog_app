@@ -86,7 +86,7 @@ get('/oauth_callback') do
   get('/about') do
 
 
-    render(:erb, :"cola/index")
+    render(:erb, :"cola/about")
   end
 
   # THE SEVEN DEADLY ROUTES

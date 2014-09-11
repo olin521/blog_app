@@ -30,7 +30,7 @@ gem 'securerandom'
 Config.
 -----
 
-*** Please allow 'Get Add Ons' feature in Heroku for Redis To Go.
+*** Click 'Get Add Ons' feature in Heroku and add Redis To Go.
 
 *** In the future, a user will sign into the app using their github address, and once authenticated be able to view and contribute to the growing list of cola flavored sodas. 
 
@@ -40,7 +40,7 @@ Config.
 
 This will ensure your db is seeded with the current list of colas.
 
-All other ENV varibales will have to be locally stored either on your local .bash_profile or on the hosting server in a secure place.
+All other ENV varibales will have to be locally stored either on your local .bash_profile or on the hosting server in a secure config file location.
 
 
 URL
@@ -50,6 +50,6 @@ http://enigmatic-refuge-9837.herokuapp.com/colas
 
 Note
 -----
-Although an testing environment was set up in the file structure, no testing was done for the site. The Github login is not currently functinal as a result of misdirecting REDITOGO url.
+Although a testing environment was set up in the file structure, no testing was done for the site. The Github login is not currently functinal as a result of misdirecting REDISTOGO url.
 
 
